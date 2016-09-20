@@ -281,23 +281,22 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 	switch (umessage)
 	{
 		// 윈도우가 제거되었는지 확인합니다.
-	case WM_DESTROY:
-	{
-		PostQuitMessage(0);
-		return 0;
-	}
+		case WM_DESTROY:
+		{
+			PostQuitMessage(0);
+			return 0;
+		}
 
-	// 윈도우가 닫히는지 확인합니다.
-	case WM_CLOSE:
-	{
-		PostQuitMessage(0);
-		return 0;
-	}
-
-	// 다른 모든 메세지들은 system 클래스의 메세지 처리기에 전달합니다.
-	default:
-	{
-		return ApplicationHandle->MessageHandler(hwnd, umessage, wparam, lparam);
-	}
+		// 윈도우가 닫히는지 확인합니다.
+		case WM_CLOSE:
+		{
+			PostQuitMessage(0);
+			return 0;
+		}
+		// 다른 모든 메세지들은 system 클래스의 메세지 처리기에 전달합니다.
+		default:
+		{
+			return ApplicationHandle->MessageHandler(hwnd, umessage, wparam, lparam);
+		}
 	}
 }

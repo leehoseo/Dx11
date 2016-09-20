@@ -1,5 +1,6 @@
 #pragma once
-#include <windows.h>
+
+#include "Directx3D.h"
 
 const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
@@ -21,5 +22,5 @@ private:
 	bool Render();
 
 private:
-
+	Directx3D* m_D3D;
 };
